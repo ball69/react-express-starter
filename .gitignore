@@ -1,0 +1,6 @@
+server_backend/node_modules
+server_backend/.env
+
+react_admin/node_modules
+react_admin/config.js
+react_admin/.env

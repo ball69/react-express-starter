@@ -1,0 +1,10 @@
+# starter-express
+APP_PORT=8081
+APP_SECRET=
+APP_TIMEZONE=Asia/Bangkok
+
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=
+DB_USER=root
+DB_PASSWORD=
