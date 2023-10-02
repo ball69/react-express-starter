@@ -5,13 +5,10 @@ import { PiWarehouseBold } from "react-icons/pi";
 
 function Navbar() {
 	window.addEventListener("click", () => {
-		// ...
 		const links = document.querySelectorAll(".link-to");
-
 		links.forEach((link) => {
 			link.addEventListener("click", function handleClick() {
 				document.body.classList.remove("vertical-sidebar-enable");
-				// link.setAttribute("style", "background-color: yellow;");
 			});
 		});
 	});
@@ -32,16 +29,7 @@ function Navbar() {
 				<div className="navbar-brand-box">
 					<a href="index.html" className="logo logo-dark">
 						<span className="logo-sm">
-							{/* <img src="/assets/images/logo-sm.png" alt="true" height={22} /> */}
-						</span>
-						<span className="logo-lg">
-							{/* <img src="/assets/images/logo-dark.png" alt="true" height={17} /> */}
-						</span>
-					</a>
-					<a href="index.html" className="logo logo-light">
-						<span className="logo-sm">
 							<PiWarehouseBold size={24} />
-							{/* <img src="/assets/images/logo-sm.png" alt="true" height={22} /> */}
 						</span>
 						<span className="logo-lg">
 							<PiWarehouseBold size={26} />{" "}
@@ -55,7 +43,24 @@ function Navbar() {
 							>
 								{import.meta.env.VITE_APP_NAME}
 							</span>
-							{/* <img src="/assets/images/logo-light.png" alt="true" height={17} /> */}
+						</span>
+					</a>
+					<a href="index.html" className="logo logo-light">
+						<span className="logo-sm">
+							<PiWarehouseBold size={24} />
+						</span>
+						<span className="logo-lg">
+							<PiWarehouseBold size={26} />{" "}
+							<span
+								style={{
+									position: "relative",
+									top: "5%",
+									left: "2.5%",
+									textTransform: "uppercase",
+								}}
+							>
+								{import.meta.env.VITE_APP_NAME}
+							</span>
 						</span>
 					</a>
 					<button

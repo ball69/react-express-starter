@@ -29,18 +29,27 @@ module.exports = {
 	// 		underscored: true,
 	// 	}
 	// ),
-	db: new sequelize({
-		database: "defaultdb",
-		username: "doadmin",
-		password: "AVNS_D5zNDj4qvki-MCnR6SV",
-		host: "dgpostgres-do-user-7562880-0.b.db.ondigitalocean.com",
-		port: 25060,
-		dialect: "postgres",
-		dialectOptions: {
-			ssl: {
-				require: true,
-				rejectUnauthorized: false, // <<<<<<< YOU NEED THIS
+	db: new sequelize(
+		process.env.PG_DB_NAME,
+		process.env.PG_DB_USER,
+		process.env.PG_DB_PASS,
+		{
+			dialect: "postgres",
+			host: process.env.PG_DB_HOST,
+			port: process.env.PG_DB_PORT,
+			query: {
+				raw: true,
 			},
-		},
-	}),
+			logging: false,
+			dialectOptions: {
+				ssl: {
+					require: true,
+					rejectUnauthorized: false,
+				},
+				useUTC: false, //for reading from database
+				dateStrings: true,
+			},
+			timezone: "+07:00",
+		}
+	),
 };

@@ -6,15 +6,13 @@ import BreadCrumbs from "./parts/BreadCrumbs";
 import { useAuthenticate } from "../../store/authenticate";
 import { useEffect } from "react";
 import { usePageLoading } from "../../store/loading";
-import { Helpers } from "../../helpers";
 import { AuthService } from "../../services/AuthService";
+import Loading from "../Loading";
 
 function LayoutDashboard() {
 	const auth = useAuthenticate((state) => state.auth);
 	const navigate = useNavigate();
 	const { loading, setLoading } = usePageLoading((state) => state);
-
-	Helpers.setThemeMode("dark");
 
 	if (!auth.isLoggedIn) {
 		navigate("/login");
@@ -29,16 +27,7 @@ function LayoutDashboard() {
 		<>
 			{loading && (
 				<>
-					<div id="preloader">
-						<div id="status">
-							<div
-								className="spinner-border text-primary avatar-sm"
-								role="status"
-							>
-								<span className="visually-hidden">Loading...</span>
-							</div>
-						</div>
-					</div>
+					<Loading />
 				</>
 			)}
 			<>

@@ -18,10 +18,6 @@ module.exports = {
 				type: Sequelize.STRING,
 				allownull: false,
 			},
-			// status: {
-			//    type: Sequelize.INTEGER,
-			//    allownull: false,
-			// },
 		},
 		{
 			freezeTableName: true,

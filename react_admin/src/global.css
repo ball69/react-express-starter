@@ -4,18 +4,55 @@
     right: 5%;
 }
 
-/* .nav-link i {
-    font-size: 16px !important;
-} */
-
 .pull-right {
     float: right !important;
 }
 
-i {
-    /* margin-right: 10px; */
-}
-
 a {
     cursor: pointer;
+}
+
+.page-loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+img {
+    max-width: 100%;
+    max-height: 150px;
+}
+
+.image-item {
+    width: 120px;
+    height: 120px;
+    height: auto;
+    float: left;
+    margin: 3px;
+    padding: 3px;
+}
+
+.image-fix {
+    width: 150px;
+    max-height: 150px;
+    max-height: 150px;
+}
+
+.fa-mr {
+    margin-right: 10px;
+}
+
+.btn {
+    margin-top: -5px;
+}
+
+.form-inline button {
+    /* margin-top: 27px; */
 }

@@ -1,10 +1,11 @@
-function Button({ type, loading = false, value, icon, color }) {
+function Button({ type, loading = false, value, icon, color, size = "lg" }) {
 	return (
 		<>
 			<button
+				size={size}
 				disabled={loading ? true : false}
 				type={type}
-				className={`btn ${
+				className={`btn btn-${size} ${
 					loading ? `btn-outline-${color}` : ``
 				} btn-${color} btn-load`}
 			>

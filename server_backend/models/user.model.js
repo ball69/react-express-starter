@@ -10,13 +10,17 @@ module.exports = {
 				defaultValue: Sequelize.UUIDV4,
 				primaryKey: true,
 			},
+			user_role_id: {
+				type: Sequelize.UUID,
+				allownull: false,
+			},
 			image: {
 				type: Sequelize.STRING,
 				allownull: true,
 			},
-			user_role_id: {
-				type: Sequelize.UUID,
-				allownull: false,
+			image_url: {
+				type: Sequelize.STRING,
+				allownull: true,
 			},
 			username: {
 				type: Sequelize.STRING,
@@ -31,6 +35,9 @@ module.exports = {
 			status: {
 				type: Sequelize.INTEGER,
 				defaultValue: 1,
+			},
+			exprieDate: {
+				type: Sequelize.DATE(6),
 			},
 		},
 		{

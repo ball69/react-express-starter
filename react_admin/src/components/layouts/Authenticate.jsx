@@ -1,12 +1,10 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAuthenticate } from "../../store/authenticate";
 import { useEffect } from "react";
-import { Helpers } from "../../helpers";
 
 function LayoutAuthenticate() {
 	const auth = useAuthenticate((state) => state.auth);
 	const navigate = useNavigate();
-	Helpers.setThemeMode("dark");
 
 	useEffect(() => {
 		if (auth.isLoggedIn) {

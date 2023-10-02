@@ -46,6 +46,8 @@ module.exports = {
 				model: UserRole,
 				attributes: ["name_en"],
 			},
+			raw: true,
+			nest: true,
 		});
 		if (!user) {
 			return res.status(401).send({

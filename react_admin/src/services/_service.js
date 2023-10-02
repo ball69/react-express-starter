@@ -4,35 +4,15 @@ const API_URL = import.meta.env.VITE_API_URL + "/api";
 
 export const Service = {
 	get: async () => {
-		try {
-			const response = await Helpers.httpRequest(API_URL + "/", "GET");
-			return response;
-		} catch (error) {
-			return error.response;
-		}
+		return await Helpers.httpRequest(API_URL + "/", "GET");
 	},
-	create: async () => {
-		try {
-			const response = await Helpers.httpRequest(API_URL + "/", "POST");
-			return response;
-		} catch (error) {
-			return error.response;
-		}
+	create: async (data) => {
+		return await Helpers.httpRequest(API_URL + "/", "POST", data);
 	},
 	update: async () => {
-		try {
-			const response = await Helpers.httpRequest(API_URL + "/", "PUT");
-			return response;
-		} catch (error) {
-			return error.response;
-		}
+		return await Helpers.httpRequest(API_URL + "/", "PUT");
 	},
 	delete: async () => {
-		try {
-			const response = await Helpers.httpRequest(API_URL + "/", "DELETE");
-			return response;
-		} catch (error) {
-			return error.response;
-		}
+		return await Helpers.httpRequest(API_URL + "/", "DELETE");
 	},
 };

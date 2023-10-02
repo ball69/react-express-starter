@@ -14,7 +14,7 @@ module.exports = async () => {
 	});
 	await User.create({
 		user_role_id: user_role_administrator.id,
-		image: "https://via.placeholder.com/150",
+		image_url: "https://via.placeholder.com/150",
 		name: "administrator",
 		username: "admin",
 		password: bcrypt.hashSync("123123", 12),
@@ -23,7 +23,7 @@ module.exports = async () => {
 	for (var i = 1; i <= 40; i++) {
 		await User.create({
 			user_role_id: user_role_support.id,
-			image: "https://via.placeholder.com/150",
+			image_url: "https://via.placeholder.com/150",
 			name: "support" + i,
 			username: "Support " + i,
 			password: bcrypt.hashSync("123123", 12),

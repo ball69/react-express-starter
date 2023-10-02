@@ -2,11 +2,12 @@
 import { useForm } from "react-hook-form";
 import InputText from "../components/inputs/InputText";
 import InputPassword from "../components/inputs/InputPassword";
-import Button from "../components/button/Button";
+import Button from "../components/inputs/Button";
 import { useState } from "react";
 import { AuthService } from "../services/AuthService";
 import { useAuthenticate } from "../store/authenticate";
 import { useNavigate } from "react-router-dom";
+import { Helpers } from "../helpers";
 
 function Login() {
 	const setAuth = useAuthenticate((state) => state.setAuth);
@@ -31,6 +32,8 @@ function Login() {
 					auth: response.data,
 					isLoggedIn: true,
 				});
+				window.localStorage.setItem("user", JSON.stringify(response.data));
+				Helpers.setAuthHeaders();
 				navigate("/");
 			})
 			.catch((error) => {
@@ -107,6 +110,7 @@ function Login() {
 											loading={btnLoading}
 											icon={`fa fa-sign-in`}
 											color={`primary`}
+											size="sm"
 										/>
 									</div>
 								</div>

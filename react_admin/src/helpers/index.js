@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const Helpers = {
 	setAuthHeaders: () => {
@@ -37,8 +38,36 @@ export const Helpers = {
 					return resolve(response);
 				})
 				.catch((error) => {
-					return reject(error);
+					return reject(error.response);
 				});
 		});
 	},
+	httpRequestUpload: (url, method, data, params = "") => {
+		return new Promise((resolve, reject) => {
+			return axios
+				.request({
+					url: url + (params !== null && params),
+					method: method,
+					data: data,
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				})
+				.then((response) => {
+					return resolve(response);
+				})
+				.catch((error) => {
+					console.log(error);
+					return reject(error.response);
+				});
+		});
+	},
+	notify: (content, type, position = "top-right", theme = "colored") => {
+		toast(content, {
+			type: type,
+			position: position,
+			theme: theme,
+		});
+	},
+	sweetalert: () => {},
 };
